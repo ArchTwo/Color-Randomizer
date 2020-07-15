@@ -1,0 +1,31 @@
+//beta 0.1 by Arch2
+
+void setup() {
+  size(1000, 800);
+}
+
+float r = 0;
+float g = 0;
+float b = 0;
+
+void draw() {
+  background(255, 255, 255);
+  fill(0, 0, 0);
+textAlign(CENTER);
+textSize(50);
+text("RANDOM COLOR GENERATOR", 500, 200);
+fill(r, g, b);
+ellipse(500, 350, 100, 100);
+textSize(10);
+}
+
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      r = random(0, 255);
+      g = random(0, 255);
+      b = random(0, 255);
+      println("Your RGB code is: " + round(r) + ", " + round(g) + ", " + round(b));
+    }
+  }
+}
