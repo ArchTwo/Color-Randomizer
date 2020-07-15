@@ -1,12 +1,24 @@
-//beta 0.1 by Arch2
+//beta 0.2 by Arch2
+//next version will have reusable code
 
 void setup() {
   size(1000, 800);
 }
 
-float r = 0;
-float g = 0;
-float b = 0;
+float r1 = 0;
+float g1 = 0;
+float b1 = 0;
+float r2 = 0;
+float g2 = 0;
+float b2 = 0;
+float r3 = 0;
+float g3 = 0;
+float b3 = 0;
+
+float ey = 350; 
+float e1x = 350;
+float e2x = 500;
+float e3x = 650;
 
 void draw() {
   background(255, 255, 255);
@@ -14,18 +26,53 @@ void draw() {
 textAlign(CENTER);
 textSize(50);
 text("RANDOM COLOR GENERATOR", 500, 200);
-fill(r, g, b);
-ellipse(500, 350, 100, 100);
-textSize(10);
-}
+fill(r1, g1, b1);
+ellipse(e1x, ey, 100, 100);
+fill(r2, g2, b2);
+ellipse(e2x, ey, 100, 100);
+fill(r3, g3, b3);
+ellipse(e3x, ey, 100, 100);
+textSize(20);
+rectMode(CENTER);
+fill(255, 255, 255);
+stroke(24, 101, 242);
+rect(500, 700, 100, 50, 5);
+fill(24, 101, 242);
+text("New", 500, 707);
+stroke(0, 0, 0);
+};
 
-void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == UP) {
-      r = random(0, 255);
-      g = random(0, 255);
-      b = random(0, 255);
-      println("Your RGB code is: " + round(r) + ", " + round(g) + ", " + round(b));
-    }
+void mouseClicked() {
+  if (((mouseX-350)*(mouseX-450)+(mouseY-350)*(mouseY-350)) < 2500) {
+      r1 = random(0, 255);
+      g1 = random(0, 255);
+      b1 = random(0, 255);
+      println("Your 1st RGB code is: " + round(r1) + ", " + round(g1) + ", " + round(b1));
+  }
+  if (((mouseX-450)*(mouseX-550)+(mouseY-350)*(mouseY-350)) < 2500) {
+      r2 = random(0, 255);
+      g2 = random(0, 255);
+      b2 = random(0, 255);
+      println("Your 2nd RGB code is: " + round(r2) + ", " + round(g2) + ", " + round(b2));
+  }
+  if (((mouseX-600)*(mouseX-700)+(mouseY-350)*(mouseY-350)) < 2500) {
+      r3 = random(0, 255);
+      g3 = random(0, 255);
+      b3 = random(0, 255);
+      println("Your 3rd RGB code is: " + round(r3) + ", " + round(g3) + ", " + round(b3));
+  }
+  if (mouseX > 450 && mouseX < 550 && mouseY > 675 && mouseY < 725) {
+      r1 = random(0, 255);
+      g1 = random(0, 255);
+      b1 = random(0, 255);
+      println("Your 1st RGB code is: " + round(r1) + ", " + round(g1) + ", " + round(b1));
+      r2 = random(0, 255);
+      g2 = random(0, 255);
+      b2 = random(0, 255);
+      println("Your 2nd RGB code is: " + round(r2) + ", " + round(g2) + ", " + round(b2));
+      r3 = random(0, 255);
+      g3 = random(0, 255);
+      b3 = random(0, 255);
+      println("Your 3rd RGB code is: " + round(r3) + ", " + round(g3) + ", " + round(b3));
   }
 }
